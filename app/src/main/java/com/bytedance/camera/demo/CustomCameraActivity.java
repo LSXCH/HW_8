@@ -211,6 +211,9 @@ CustomCameraActivity extends AppCompatActivity {
 
     private void releaseCameraAndPreview() {
         //todo 释放camera资源
+        mCamera.release();
+        mCamera = null;
+
     }
 
     Camera.Size size;
@@ -231,6 +234,10 @@ CustomCameraActivity extends AppCompatActivity {
 
     private void releaseMediaRecorder() {
         //todo 释放MediaRecorder
+        mMediaRecorder.reset();
+        mMediaRecorder.release();
+        mMediaRecorder = null;
+        mCamera.lock();
     }
 
 
